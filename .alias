@@ -1,7 +1,7 @@
 alias cls="clear"
 alias tree="exa --icons --tree -L 1 -I node_modules"
+alias ll="exa --icons -lah"
 alias ls="exa --icons"
-alias dir="exa --icons -lh"
 alias grep="grep --color"
 alias cat="bat"
 alias diff="icdiff"

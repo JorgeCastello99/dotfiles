@@ -43,6 +43,10 @@ sudo chmod +x /usr/local/bin/mkweb
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 echo source $HOME/.dotfiles/.zshrc >> ~/.zshrc
 
+#powerlevel10k theme for zsh
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
+echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
+
 # Change to ZSH
 sudo chsh -s /usr/bin/zsh
 
