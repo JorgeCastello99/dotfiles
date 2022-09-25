@@ -5,7 +5,7 @@ sudo apt update && sudo apt upgrade
 sudo apt autoremove
 
 #instalaciones
-sudo apt install bash dpkg zsh zgen sudo wget git curl exa tldr lolcat
+sudo apt install bash dpkg zsh zgen sudo wget git curl exa tldr lolcat git-flow
 
 
 #bat
@@ -27,13 +27,15 @@ fi
 
 
 #node
+# node
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-
+source $HOME/.nvm/nvm.sh
+nvm install --lts
 
 #pnpm mas rapido mas rapido que npm reutiliza de otros proyectos los paquetes
 sudo npm install -g pnpm
 
-#mkweb
+#mkweb vite
 sudo curl -s https://manz.dev/download/mkweb -o /usr/local/bin/mkweb
 sudo chmod +x /usr/local/bin/mkweb
 
@@ -43,9 +45,16 @@ sudo chmod +x /usr/local/bin/mkweb
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 echo source $HOME/.dotfiles/.zshrc >> ~/.zshrc
 
+
+#powerlevel10k
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+
+
+
 # Change to ZSH
 sudo chsh -s /usr/bin/zsh
 
 zsh
+
 
 
