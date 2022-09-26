@@ -1,10 +1,12 @@
 ZSH_THEME="powerlevel10k/powerlevel10k"
-plugins=(git colored-man-pages)
+plugins=(git colored-man-pages alias-finder)
 
 # Reload theme
 source $ZSH/oh-my-zsh.sh
 
 #Alias
+alias zshconfig="nano ~/.zshrc"
+alias ohmyzshconfig="nano ~/.oh-my-zsh/oh-my-zsh.sh"
 source ~/.dotfiles/.aliases
 
 #node
@@ -16,9 +18,14 @@ export NVM_DIR=$HOME/.nvm
 export PNPM_HOME=$HOME/.local/share/pnpm
 
 
+#zgen load plugins
+source /usr/share/zgen/zgen.zsh
+#colores en sintaxis
+zgen load zsh-users/zsh-syntax-highlighting
+
 
 export PATH=$HOME/bin:/usr/games:/usr/local/bin:$HOME/.nvm:$PNPM_HOME:$PATH
 
 
-echo "$(cat $HOME/.dotfiles/banner1"
+echo "$(cat $HOME/.dotfiles/banner1" | lolcat
 

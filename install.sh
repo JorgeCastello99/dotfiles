@@ -5,25 +5,14 @@ sudo apt update && sudo apt upgrade
 sudo apt autoremove
 
 #instalaciones
-sudo apt install bash dpkg zsh zgen sudo wget git curl exa tldr lolcat git-flow
+sudo apt install bash dpkg zsh zgen sudo wget git curl tldr lolcat git-flow unzip zip exa
+#zoxide
 
 
 #bat
 wget https://github.com/sharkdp/bat/releases/download/v0.22.1/bat-musl_0.22.1_amd64.deb
 sudo apt install ./bat-musl_0.22.1_i686.deb
 
-#exa
-if [dpkg -s exa]
-then
-    
-else
-
-    EXA_VERSION=$(curl -s "https://api.github.com/repos/ogham/exa/releases/latest" | grep -Po '"tag_name": "v\K[0-9.]+')
-curl -Lo exa.zip "https://github.com/ogham/exa/releases/latest/download/exa-linux-x86_64-v${EXA_VERSION}.zip" 
-sudo unzip -q ./exa.zip bin/exa -d /usr/local
-rm -rf exa.zip
-
-fi
 
 
 #node
@@ -45,10 +34,12 @@ sudo chmod +x /usr/local/bin/mkweb
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 echo source $HOME/.dotfiles/.zshrc >> ~/.zshrc
 
+PNPM_HOME=$HOME/.local/share/pnpm
+PATH=$HOME/bin:/usr/local/bin:$HOME/.nvm:/usr/local/go/bin:$HOME/.deno/bin:$HOME/.cargo/bin:/usr/share/go/bin:$PNPM_HOME:$PATH
+
 
 #powerlevel10k
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-
 
 
 # Change to ZSH
