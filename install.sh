@@ -1,17 +1,17 @@
 #!/bin/bash
 
 #actualizacion
-sudo apt update && sudo apt upgrade
+sudo apt-get -y update && sudo apt-get -y full-upgrade
 sudo apt autoremove
 
 #instalaciones
-sudo apt install bash dpkg zsh zgen sudo wget git curl tldr lolcat git-flow unzip zip exa
-#zoxide
+sudo apt-get -y install bash dpkg zsh zgen sudo wget git curl tldr lolcat git-flow unzip zip exa cloc bat
+
 
 
 #bat
-wget https://github.com/sharkdp/bat/releases/download/v0.22.1/bat-musl_0.22.1_amd64.deb
-sudo apt install ./bat-musl_0.22.1_i686.deb
+#wget https://github.com/sharkdp/bat/releases/download/v0.22.1/bat-musl_0.22.1_amd64.deb
+#sudo apt install ./bat-musl_0.22.1_i686.deb
 
 
 
@@ -40,7 +40,6 @@ PATH=$HOME/bin:/usr/local/bin:$HOME/.nvm:/usr/local/go/bin:$HOME/.deno/bin:$HOME
 
 #powerlevel10k
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-
 
 # Change to ZSH
 sudo chsh -s /usr/bin/zsh
